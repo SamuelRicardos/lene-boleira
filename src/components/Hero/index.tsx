@@ -1,5 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
-import BoleiraImage from "../../images/LeneBoleira.jpeg";
+import BoleiraImage from "../../images/LeneBoleira2.png";
 import BackgroundImage from "../../images/bolos.jpg";
 
 export const Hero = () => {
@@ -31,13 +31,13 @@ export const Hero = () => {
         </a>
       </div>
 
-      <div className="relative z-10 md:w-1/2">
-        <img
-          src={BoleiraImage}
-          alt="Foto da boleira"
-          className="w-full max-w-sm mx-auto rounded-xl shadow-lg object-cover"
-        />
-      </div>
+<div className="relative z-10 mx-auto p-1 rounded-full bg-pink-100 shadow-lg">
+  <img
+    src={BoleiraImage}
+    alt="Foto da boleira"
+    className="w-full max-w-sm mx-auto object-cover rounded-full"
+  />
+</div>
     </section>
   );
 };
