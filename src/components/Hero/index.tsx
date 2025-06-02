@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 import BoleiraImage from "../../images/LeneBoleira.jpeg";
-import BackgroundImage from "../../images/backgroundtest.png";
+import BackgroundImage from "../../images/bolos.jpg";
 
 export const Hero = () => {
   return (
@@ -11,9 +11,9 @@ export const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      <div className="absolute inset-0 bg-black/10 z-0" />
+      <div className="absolute inset-0 bg-black/20 z-0" />
 
-      <div className="relative z-10 md:w-1/2 text-white">
+      <div className="relative z-10 md:w-1/2 text-white ml-50">
         <h2 className="text-3xl font-extrabold mb-3">
           Bolos caseiros com sabor de amor
         </h2>
