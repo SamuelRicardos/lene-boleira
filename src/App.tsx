@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { BoloCardapio } from "./pages/BoloCardapio";
+import { DoceCardapio } from "./pages/DoceCardapio";
 import { Home } from "./pages/Home";
+import { BoloCardapio } from "./pages/BoloCardapio";
 
 function App() {
 
@@ -11,6 +12,10 @@ function App() {
   },
   {
     path: "cardapio-doces",
+    element: <DoceCardapio/>
+  },
+  {
+    path: "cardapio-bolos",
     element: <BoloCardapio/>
   }
 ])

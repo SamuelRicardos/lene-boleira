@@ -6,61 +6,43 @@ interface MenuItem {
 
 interface MenuSection {
     title: string;
+    size?: string;
     items: MenuItem[];
-    price?: string;
-    type: 'simple-cakes' | 'tiered-cakes' | 'extras' | 'fillings';
+    price: string;
+    type: 'traditional' | 'special';
 }
 
-const bolosMenuData: MenuSection[] = [
+const menuData: MenuSection[] = [
     {
-        title: 'SIMPLES',
-        items: [
-            { name: '10 fatias - R$130,00' },
-            { name: '15 fatias - R$ 175,00' },
-            { name: '20 fatias - R$ 215,00' },
-            { name: '25 fatias - R$ 255,00' },
-            { name: '30 fatias - R$ 290,00' },
-            { name: '35 fatias - R$ 335,00' },
-        ],
-        type: 'simple-cakes',
-    },
-    {
-        title: '2 ANDARES',
-        items: [
-            { name: '10 fatias - R$180,00' },
-            { name: '15 fatias - R$ 225,00' },
-            { name: '20 fatias - R$ 265,00' },
-            { name: '25 fatias - R$ 305,00' },
-            { name: '30 fatias - R$ 340,00' },
-            { name: '35 fatias - R$ 385,00' },
-        ],
-        type: 'tiered-cakes',
-    },
-    {
-        title: 'EXTRAS',
+        title: 'DOCES TRADICIONAIS',
+        size: '15gr',
         items: [
             { name: 'Brigadeiro' },
-            { name: 'Morangos' },
-            { name: 'Balões' },
+            { name: 'Beijinho' },
+            { name: 'Casadinho' },
+            { name: 'Brigadeiro branco' },
+            { name: 'Prestígio (Brigadeiro de chocolate com cobertura de coco)' },
         ],
-        type: 'extras',
+        price: 'R$150,00',
+        type: 'traditional',
     },
     {
-        title: 'RECHEIOS',
+        title: 'DOCES SABORES ESPECIAIS',
         items: [
-            { name: 'Ninho' },
-            { name: 'Brigadeiro tradicional' },
-            { name: 'Brigadeiro trufado (chocolate meio amargo)' },
-            { name: 'Doce de Leite' },
-            { name: 'Beijinho' },
-            { name: 'Crocante de Amendoim' },
-            { name: 'Brigadeiro branco' },
+            { name: 'Ninho com Nutella' },
+            { name: 'Ferrero Rocher' },
+            { name: 'Surpresa de uva' },
+            { name: 'Paçoquinha' },
+            { name: 'Romeu e Julieta' },
+            { name: 'Churros' },
+            { name: 'Crocante' },
         ],
-        type: 'fillings',
+        price: 'R$ 180,00',
+        type: 'special',
     },
 ];
 
-export const BoloCardapio = () => {
+export const DoceCardapio = () => {
     return (
         <div>
             <HeaderCardapio />
@@ -85,23 +67,23 @@ export const BoloCardapio = () => {
                         </div>
                     </header>
 
-                    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 relative z-10">
-                        {bolosMenuData.map((section, index) => (
+                    <section className="flex flex-col md:flex-row justify-center gap-8 p-4 relative z-10">
+                        {menuData.map((section, index) => (
                             <div
                                 key={index}
                                 className={`
                 flex-1 min-w-[280px] max-w-md p-6 rounded-lg shadow-md text-center
-                flex flex-col justify-between
-                ${section.type === 'simple-cakes' ? 'bg-pink-100' :
-                                        section.type === 'tiered-cakes' ? 'bg-pink-300' :
-                                            'bg-pink-100 border-2 border-dashed border-pink-300'
-                                    }
-                `}
+                flex flex-col justify-between  /* Adicionado flexbox para alinhar conteúdo */
+                ${section.type === 'traditional' ? 'bg-pink-100 border-2 border-dashed border-pink-300' : 'bg-pink-300'}
+              `}
                             >
                                 <div>
                                     <h2 className="font-['Pacifico'] text-3xl text-pink-700 mb-4">
                                         {section.title}
                                     </h2>
+                                    {section.size && (
+                                        <p className="text-gray-600 text-sm mb-4">Tamanho: {section.size}</p>
+                                    )}
                                     <ul className="list-none p-0 m-0 text-left text-gray-800 text-lg flex-grow">
                                         {section.items.map((item, itemIndex) => (
                                             <li key={itemIndex} className="mb-2">
@@ -110,18 +92,16 @@ export const BoloCardapio = () => {
                                         ))}
                                     </ul>
                                 </div>
-                                {section.price && (
-                                    <div className="text-2xl font-bold text-pink-700 mt-6 text-right">
-                                        {section.price.startsWith('R$') ? 'O valor do cento está:' : ''} {section.price}
-                                    </div>
-                                )}
+                                <div className="text-xl font-bold text-pink-700 mt-6 text-center">
+                                    O valor do cento {section.price.startsWith('R$') ? 'está' : ''}: {section.price}
+                                </div>
                             </div>
                         ))}
                     </section>
 
                     <section className="text-center py-10 relative z-10">
                         <h3 className="font-['Pacifico'] text-4xl text-pink-700 mb-8">
-                            Bolos decorados para a sua festa!
+                           Doces para a sua festa!
                         </h3>
                         <div className="flex flex-wrap justify-center gap-6 mb-10">
                             <img
