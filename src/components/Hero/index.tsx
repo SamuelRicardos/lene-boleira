@@ -20,10 +20,15 @@ export const Hero = () => {
         <p className="text-base mb-4">
           Encomende bolos deliciosos para todas as ocasiões
         </p>
-        <button className="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition flex items-center gap-2 mx-auto md:mx-0">
+        <a
+          href="https://wa.me/5584999371907"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-pink-500 text-white py-2 px-3 rounded-full hover:bg-pink-600 transition"
+        >
           Faça seu pedido
-          <FaWhatsapp size={18} />
-        </button>
+          <FaWhatsapp className="text-xl" />
+        </a>
       </div>
 
       <div className="relative z-10 md:w-1/2">
