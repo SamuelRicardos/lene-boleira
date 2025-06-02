@@ -1,20 +1,25 @@
-import { Contato } from "./components/Contato";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { Produtos } from "./components/Produtos";
-import { Sobre } from "./components/Sobre";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BoloCardapio } from "./pages/BoloCardapio";
+import { Home } from "./pages/Home";
 
 function App() {
+
+  const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "cardapio-bolos",
+    element: <BoloCardapio/>
+  }
+])
+
   return (
     <div className="font-sans text-gray-800 bg-pink-50">
-      <Header/>
-      <Hero/>
-      <Produtos/>
-      <Sobre/>
-      <Contato/>
-      <Footer/>
-
+      <div>
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
