@@ -1,6 +1,6 @@
 import { PiCake } from "react-icons/pi";
 import Bolo1 from "../../images/Bolo1.jpeg";
-import Bolo2 from "../../images/Bolo2.jpeg";
+import Bolo2 from "../../images/Bolo4.jpeg";
 import Bolo3 from "../../images/Bolo3.jpeg";
 import { motion } from "framer-motion";
 
@@ -11,12 +11,11 @@ export const Produtos = () => {
     { img: Bolo3, nome: "Bolo de Festa" },
   ];
 
-  // Variants para as ondas
   const waveVariant = {
     animate: {
-      rotate: [0, 0, 0],       // gira de 0° a 5° e volta
-      scale: [1, 1.05, 1],    // escala pulsante
-      opacity: [0.8, 0.95, 0.8], // opacidade variando
+      rotate: [0, 0, 0],
+      scale: [1, 1.05, 1],
+      opacity: [0.8, 0.95, 0.8],
       transition: {
         duration: 6,
         ease: "easeInOut",
@@ -41,7 +40,6 @@ export const Produtos = () => {
   return (
     <section id="products" className="relative py-20 px-4 bg-white overflow-hidden">
 <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden pointer-events-none">
-  {/* Onda canto superior esquerdo animada */}
   <motion.div
     className="absolute top-0 left-0 w-80 h-80 bg-pink-300 opacity-80 rounded-br-[60%_80%] origin-top-left shadow-inner"
     variants={waveVariant}
@@ -49,7 +47,6 @@ export const Produtos = () => {
     style={{ transformOrigin: "top left" }}
   ></motion.div>
 
-  {/* Onda canto inferior direito animada */}
   <motion.div
     className="absolute bottom-0 right-0 w-72 h-72 bg-pink-300 opacity-70 rounded-tl-[60%_80%] origin-top-right shadow-inner"
     variants={waveVariantReverse}
@@ -77,7 +74,7 @@ export const Produtos = () => {
               <img
                 src={bolo.img}
                 alt={bolo.nome}
-                className="w-full h-64 object-cover"
+                className="w-full h-100 object-cover"
               />
               <div className="p-4 text-center">
                 <h4 className="text-lg font-semibold text-pink-700 mb-1">

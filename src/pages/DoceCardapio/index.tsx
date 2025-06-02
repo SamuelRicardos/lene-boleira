@@ -1,4 +1,7 @@
 import { HeaderCardapio } from "../../components/HeaderCardapio";
+import Doce1 from "../../images/doces1.jpeg"
+import Doce2 from "../../images/doces2.jpeg"
+import Doce3 from "../../images/doces3.jpg"
 
 interface MenuItem {
     name: string;
@@ -100,28 +103,26 @@ export const DoceCardapio = () => {
                     </section>
 
                     <section className="text-center py-10 relative z-10">
-                        <h3 className="font-['Pacifico'] text-4xl text-pink-700 mb-8">
-                           Doces para a sua festa!
+                        <h3 className="font-['Pacifico'] text-3xl sm:text-4xl text-pink-700 mb-8 px-4">
+                            Doces para a sua festa!
                         </h3>
-                        <div className="flex flex-wrap justify-center gap-6 mb-10">
-                            <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+1"
-                                alt="Doce Decorado 1"
-                                className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
-                                onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
-                            />
-                            <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+2"
-                                alt="Doce Decorado 2"
-                                className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
-                                onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
-                            />
-                            <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+3"
-                                alt="Doce Decorado 3"
-                                className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
-                                onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
-                            />
+                        <div className="flex flex-wrap justify-center gap-6 px-4">
+                            {[Doce1, Doce2, Doce3].map((src, index) => (
+                                <div
+                                    key={index}
+                                    className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-white rounded-3xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+                                >
+                                    <img
+                                        src={src}
+                                        alt={`Doce Decorado ${index + 1}`}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            e.currentTarget.src =
+                                                'https://placehold.co/300x300/FCE7F3/BE185D?text=Erro+Imagem';
+                                        }}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </section>
                 </div>
