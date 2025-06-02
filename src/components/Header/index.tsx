@@ -124,7 +124,7 @@ export const Header = () => {
             className="cursor-pointer text-gray-700 hover:text-pink-600"
             onClick={closeMenu}
           >
-            Bolos
+            Produtos
           </Link>
           <Link
             to="contact"
