@@ -13,7 +13,7 @@ export const Hero = () => {
 
       <div className="absolute inset-0 bg-black/20 z-0" />
 
-      <div className="relative z-10 md:w-1/2 text-white ml-50">
+      <div className="relative z-10 md:w-1/2 text-white md:ml-50">
         <h2 className="text-3xl font-extrabold mb-3">
           Bolos caseiros com sabor de amor
         </h2>
