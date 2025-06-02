@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import Logo from "../../images/LogoLene2.png";
 
-export const Header = () => {
+export const HeaderCardapio = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -12,47 +11,25 @@ export const Header = () => {
 
   return (
     <header className="bg-white shadow-md p-4 flex justify-between items-center relative z-50">
-
-      <img
-        src={Logo}
-        alt="Logo Lene Boleira"
-        className="h-15 w-auto"
-      />
+      <RouterLink to="/">
+        <img
+          src={Logo}
+          alt="Logo Lene Boleira"
+          className="h-15 w-auto cursor-pointer"
+        />
+      </RouterLink>
 
       <nav className="hidden md:flex space-x-6">
-        <Link
-          to="home"
-          smooth={true}
-          duration={500}
+        <RouterLink
+          to="/"
           className="cursor-pointer text-gray-700 hover:text-pink-600"
         >
           Início
-        </Link>
-        <Link
-          to="about"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-gray-700 hover:text-pink-600"
-        >
-          Sobre
-        </Link>
-        <Link
-          to="products"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-gray-700 hover:text-pink-600"
-        >
-          Bolos
-        </Link>
-        <Link
+        </RouterLink>
+        <RouterLink
           to="contact"
-          smooth={true}
-          duration={500}
           className="cursor-pointer text-gray-700 hover:text-pink-600"
         >
-          Contato
-        </Link>
-        <RouterLink to="/">
           Cardápios
         </RouterLink>
       </nav>
@@ -65,43 +42,18 @@ export const Header = () => {
 
       {isOpen && (
         <nav className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-4 space-y-3 md:hidden">
-          <Link
+          <RouterLink
             to="home"
-            smooth={true}
-            duration={500}
             className="cursor-pointer text-gray-700 hover:text-pink-600"
             onClick={closeMenu}
           >
             Início
-          </Link>
-          <Link
+          </RouterLink>
+          <RouterLink
             to="about"
-            smooth={true}
-            duration={500}
             className="cursor-pointer text-gray-700 hover:text-pink-600"
             onClick={closeMenu}
           >
-            Sobre
-          </Link>
-          <Link
-            to="products"
-            smooth={true}
-            duration={500}
-            className="cursor-pointer text-gray-700 hover:text-pink-600"
-            onClick={closeMenu}
-          >
-            Bolos
-          </Link>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            className="cursor-pointer text-gray-700 hover:text-pink-600"
-            onClick={closeMenu}
-          >
-            Contato
-          </Link>
-          <RouterLink to="/">
             Cardápios
           </RouterLink>
         </nav>
