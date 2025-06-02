@@ -42,16 +42,17 @@ const menuData: MenuSection[] = [
 
 export const BoloCardapio = () => {
   return (
-    <div className="min-h-screen bg-pink-50 flex items-center justify-center p-4">
+   <div className="min-h-screen bg-pink-50 flex items-center justify-center p-4">
       <div className="relative max-w-4xl w-full bg-white rounded-xl shadow-lg overflow-hidden md:p-8 p-4">
+        {/* Decorative shapes - formas decorativas */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-pink-200 rounded-full opacity-60 transform translate-x-1/3 -translate-y-1/3 z-0"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-100 rounded-full opacity-60 transform -translate-x-1/3 translate-y-1/3 z-0"></div>
+        {/* Small cupcake icon - ícone de cupcake pequeno */}
         <div className="absolute top-1/4 right-4 text-pink-400 z-0">
           <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
           </svg>
         </div>
-
 
         <header className="text-center py-8 relative z-10">
           <h1 className="font-['Pacifico'] text-5xl text-pink-700 mb-2 leading-tight">
@@ -70,23 +71,26 @@ export const BoloCardapio = () => {
               key={index}
               className={`
                 flex-1 min-w-[280px] max-w-md p-6 rounded-lg shadow-md text-center
+                flex flex-col justify-between  /* Adicionado flexbox para alinhar conteúdo */
                 ${section.type === 'traditional' ? 'bg-pink-100 border-2 border-dashed border-pink-300' : 'bg-pink-300'}
               `}
             >
-              <h2 className="font-['Pacifico'] text-3xl text-pink-700 mb-4">
-                {section.title}
-              </h2>
-              {section.size && (
-                <p className="text-gray-600 text-sm mb-4">Tamanho: {section.size}</p>
-              )}
-              <ul className="list-none p-0 m-0 text-left text-gray-800 text-lg">
-                {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="mb-2">
-                    {item.name}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-2xl font-bold text-pink-700 mt-6">
+              <div> {/* Conteúdo superior agrupado */}
+                <h2 className="font-['Pacifico'] text-3xl text-pink-700 mb-4">
+                  {section.title}
+                </h2>
+                {section.size && (
+                  <p className="text-gray-600 text-sm mb-4">Tamanho: {section.size}</p>
+                )}
+                <ul className="list-none p-0 m-0 text-left text-gray-800 text-lg flex-grow"> {/* flex-grow adicionado aqui */}
+                  {section.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="mb-2">
+                      {item.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="text-xl font-bold text-pink-700 mt-6 text-center">
                 O valor do cento {section.price.startsWith('R$') ? 'está' : ''}: {section.price}
               </div>
             </div>
@@ -98,7 +102,6 @@ export const BoloCardapio = () => {
             Bolos decorados para a sua festa!
           </h3>
           <div className="flex flex-wrap justify-center gap-6 mb-10">
-            {/* Placeholder images - Imagens de exemplo. Substitua por suas próprias imagens. */}
             <img
               src="https://placehold.co/300x200/FCE7F3/BE185D?text=Bolo+Decorado+1"
               alt="Bolo Decorado 1"
@@ -118,12 +121,6 @@ export const BoloCardapio = () => {
               onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
             />
           </div>
-          <a
-            href="#"
-            className="inline-block bg-pink-700 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-pink-800 transition-colors duration-300 shadow-lg"
-          >
-            Faça sua encomenda!
-          </a>
         </section>
       </div>
     </div>
