@@ -10,7 +10,7 @@ function App() {
     element: <Home/>
   },
   {
-    path: "cardapio-bolos",
+    path: "cardapio-doces",
     element: <BoloCardapio/>
   }
 ])

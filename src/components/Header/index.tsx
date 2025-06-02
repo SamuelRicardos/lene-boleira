@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import Logo from "../../images/LogoLene2.png";
@@ -9,6 +9,12 @@ export const Header = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
 
   return (
     <header className="bg-white shadow-md p-4 flex justify-between items-center relative z-50">
@@ -52,9 +58,37 @@ export const Header = () => {
         >
           Contato
         </Link>
-        <RouterLink to="/">
-          Cardápios
-        </RouterLink>
+        <div className="relative cursor-pointer text-gray-700 group">
+          <button
+            onClick={toggleDropdown}
+            className="cursor-pointer flex items-center gap-1 hover:text-pink-600 transition-colors duration-300 focus:outline-none"
+          >
+            Cardápios
+            <FiChevronDown
+              className={`mt-[2px] text-pink-500 transition-transform duration-300 ${showDropdown ? "rotate-180" : ""
+                }`}
+            />
+          </button>
+
+          {showDropdown && (
+            <div className="absolute right-0 mt-0 w-40 bg-white border border-pink-100 shadow-lg rounded-xl z-50 animate-fade-in">
+              <RouterLink
+                to="/cardapio-bolos"
+                className="block px-5 py-2 text-gray-700 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 rounded-t-xl"
+                onClick={() => setShowDropdown(false)}
+              >
+                Bolos
+              </RouterLink>
+              <RouterLink
+                to="/cardapio-doces"
+                className="block px-5 py-2 text-gray-700 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 rounded-b-xl"
+                onClick={() => setShowDropdown(false)}
+              >
+                Doces
+              </RouterLink>
+            </div>
+          )}
+        </div>
       </nav>
 
       <div className="md:hidden">
@@ -101,8 +135,19 @@ export const Header = () => {
           >
             Contato
           </Link>
-          <RouterLink to="/">
-            Cardápios
+          <RouterLink
+            to="/cardapio-bolos"
+            className="cursor-pointer text-gray-700 hover:text-pink-600"
+            onClick={closeMenu}
+          >
+            Bolos
+          </RouterLink>
+          <RouterLink
+            to="/cardapio-doces"
+            className="cursor-pointer text-gray-700 hover:text-pink-600"
+            onClick={closeMenu}
+          >
+            Doces
           </RouterLink>
         </nav>
       )}
