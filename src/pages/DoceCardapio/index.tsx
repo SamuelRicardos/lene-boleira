@@ -105,20 +105,20 @@ export const DoceCardapio = () => {
                         </h3>
                         <div className="flex flex-wrap justify-center gap-6 mb-10">
                             <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Bolo+Decorado+1"
-                                alt="Bolo Decorado 1"
+                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+1"
+                                alt="Doce Decorado 1"
                                 className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
                                 onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
                             />
                             <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Bolo+Decorado+2"
-                                alt="Bolo Decorado 2"
+                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+2"
+                                alt="Doce Decorado 2"
                                 className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
                                 onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
                             />
                             <img
-                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Bolo+Decorado+3"
-                                alt="Bolo Decorado 3"
+                                src="https://placehold.co/300x200/FCE7F3/BE185D?text=Doce+Decorado+3"
+                                alt="Doce Decorado 3"
                                 className="w-full max-w-xs h-auto rounded-lg shadow-md object-cover"
                                 onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x200/FCE7F3/BE185D?text=Erro+Imagem'; }}
                             />
