@@ -7,17 +7,20 @@ export const Contato = () => {
                 <h3 className="text-3xl font-bold text-pink-600 mb-6">
                     Fale Conosco
                 </h3>
-                <div className="flex justify-center items-center gap-6 mb-6 text-gray-700 text-lg">
+
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 mb-6 text-gray-700 text-lg">
                     <div className="flex items-center gap-2">
                         <FaPhoneAlt className="text-pink-600" />
                         <span>(84) 99937-1907</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <FaEnvelope className="text-pink-600" />
-                        <span>shirlene.rn@hotmail.com</span>
+                        <span className="break-all">shirlene.rn@hotmail.com</span>
                     </div>
                 </div>
+
                 <p className="text-gray-700 mb-4">Siga-nos nas redes sociais!</p>
+
                 <div className="flex justify-center gap-6 mt-4 text-2xl">
                     <a
                         href="https://www.instagram.com/leneboleira"
