@@ -135,6 +135,15 @@ export const Header = () => {
           >
             Contato
           </Link>
+          <Link
+            to="cardapio"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer text-gray-700 hover:text-pink-600"
+            onClick={closeMenu}
+          >
+            Cardapios
+          </Link>
           <RouterLink
             to="/cardapio-bolos"
             className="cursor-pointer text-gray-700 hover:text-pink-600"
