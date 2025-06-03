@@ -17,7 +17,7 @@ export const Hero = () => {
         <h2 className="text-3xl font-extrabold mb-3">
           Bolos caseiros com sabor de amor
         </h2>
-        <p className="text-base mb-4">
+        <p className="text-base font-bold mb-4">
           Encomende bolos deliciosos para todas as ocasiões
         </p>
         <a

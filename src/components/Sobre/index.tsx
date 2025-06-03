@@ -2,7 +2,7 @@
 export const Sobre = () => {
     return (
         <div>
-            <section id="about" className="py-16 px-4 bg-pink-50">
+            <section id="about" className="py-16 px-4 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-center text-3xl font-bold text-pink-600 mb-6">Sobre nós</h3>
                     <p className="text-lg text-gray-700">

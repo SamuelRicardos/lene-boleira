@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HeaderCardapio } from "../../components/HeaderCardapio";
 import Doce1 from "../../images/doces1.jpeg"
 import Doce2 from "../../images/doces2.jpeg"
@@ -46,6 +47,10 @@ const menuData: MenuSection[] = [
 ];
 
 export const DoceCardapio = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <HeaderCardapio />

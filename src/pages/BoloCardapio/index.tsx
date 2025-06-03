@@ -2,6 +2,7 @@ import { HeaderCardapio } from "../../components/HeaderCardapio";
 import Bolo1 from "../../images/bolo.jpeg"
 import Bolo2 from "../../images/Bolo4.jpeg"
 import Bolo3 from "../../images/Bolo3.jpeg"
+import { useEffect } from "react";
 interface MenuItem {
     name: string;
 }
@@ -12,6 +13,8 @@ interface MenuSection {
     price?: string;
     type: 'simple-cakes' | 'tiered-cakes' | 'extras' | 'fillings';
 }
+
+
 
 const bolosMenuData: MenuSection[] = [
     {
@@ -63,6 +66,10 @@ const bolosMenuData: MenuSection[] = [
 ];
 
 export const BoloCardapio = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <HeaderCardapio />
@@ -123,7 +130,7 @@ export const BoloCardapio = () => {
 
                     <section className="text-center py-10 relative z-10">
                         <h3 className="font-['Pacifico'] text-3xl sm:text-4xl text-pink-700 mb-8 px-4">
-                            Doces para a sua festa!
+                            Bolos para a sua festa!
                         </h3>
                         <div className="flex flex-wrap justify-center gap-6 px-4">
                             {[Bolo1, Bolo2, Bolo3].map((src, index) => (
