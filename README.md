@@ -6,7 +6,7 @@ Um site institucional simples, bonito e funcional para a confeiteira **Lene Bole
 
 ## 🔗 Acesse o site
 
-👉 [lene-boleira.vercel.app](https://lene-boleira.vercel.app/) *(substitua com o link correto, se necessário)*
+👉 [lene-boleira.vercel.app](https://lene-boleira.vercel.app/)
 
 ---
 
