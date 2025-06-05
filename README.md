@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+![image](https://github.com/user-attachments/assets/4452ed48-0cf9-4532-a614-13ca8eca6d1e)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎂 Lene Boleira
 
-Currently, two official plugins are available:
+Um site institucional simples, bonito e funcional para a confeiteira **Lene Boleira**, com foco em apresentar seus bolos, doces e contato direto via WhatsApp.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Acesse o site
 
-## Expanding the ESLint configuration
+👉 [lene-boleira.vercel.app](https://lene-boleira.vercel.app/) *(substitua com o link correto, se necessário)*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tecnologias Utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [React](https://reactjs.org/) — Biblioteca JavaScript para interfaces
+- [Vite](https://vitejs.dev/) — Ferramenta de build ultrarrápida para projetos modernos
+- [Tailwind CSS](https://tailwindcss.com/) — Utilitário CSS para design rápido e responsivo
+- [React Icons](https://react-icons.github.io/react-icons/) — Biblioteca de ícones SVG no React
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📦 Funcionalidades
+
+- Apresentação visual dos produtos
+- Botões direcionados para a tela de Cardápio de Bolos e Doces
+- Design responsivo para todos os dispositivos
+- Scroll suave para melhor experiência de navegação
+
+---
+
+## 📁 Estrutura do Projeto (modelo)
+
+```bash
+📦 lene-boleira/
+├── public/
+├── src/
+│   ├── components
+│   ├──  images
+│   ├──  pages/
+│   │       BoloCardapio
+│   │       DoceCardapio
+│   ├── App.tsx
+│   └── main.tsx
+├── tailwind.config.js
+├── index.css
+└── vite.config.js
